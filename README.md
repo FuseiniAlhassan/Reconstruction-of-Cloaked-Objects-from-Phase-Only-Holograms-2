@@ -29,6 +29,8 @@ This repository contains two Python-based simulations:
 1. **Refraction Cloak Ray Tracing** – Simulates light rays bending around a cloaked region using a gradient-index medium.
 2. **Holographic Camouflage** – Demonstrates how a phase-only hologram can reconstruct a background scene to hide an object.
 
+![](hologram_camouflage_panels.png)
+
 ## Requirements
 - Python 3.x
 - NumPy
