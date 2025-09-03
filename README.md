@@ -1,5 +1,7 @@
 # Reconstruction-of-Cloaked-Objects-from-Phase-Only-Holograms-2
 
+![](refraction_cloak_ray_demo.png)
+
 **This codebase contains two main simulations:**
 1. Refraction Cloak Ray Tracing
 • 	Purpose: Simulates how light rays bend around a cloaked region using a gradient-index (GRIN) medium.
