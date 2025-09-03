@@ -7,7 +7,6 @@ import os
 # Get the path to the desktop
 desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
 
-#ray_demo_code = dedent
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -24,7 +23,7 @@ def make_grin_field(nx=600, ny=300, cloak_radius=60, cloak_center=(300,150), n0=
     cx, cy = cloak_center
     R = np.sqrt((X - cx)**2 + (Y - cy)**2)
 
-    # Smooth "wall" around the cloak: high-n ring that deflects rays
+    # Smooth "wall" around the cloak: high n ring that deflects rays
     wall = np.exp(-((R - cloak_radius)/12.0)**2)
 
     # Add a gentle background gradient so rays curve back to horizontal
@@ -37,10 +36,6 @@ def make_grin_field(nx=600, ny=300, cloak_radius=60, cloak_center=(300,150), n0=
 
 def trace_rays(n, n_steps=1500, ds=0.5, start_y_vals=None):
     
-    #Very simple paraxial ray tracer in an inhomogeneous medium:
-    #d/ds(n * dr/ds) = grad(n)
-    #We discretize with small steps and update directions by local gradient of n.
-   
     ny, nx = n.shape
     gy, gx = np.gradient(n)
 
@@ -202,9 +197,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-#with open("/mnt/data/hologram_camouflage_demo.py", "w") as f:
-    #f.write(holo_demo_code)
-
 # Execute to generate images
 subprocess.run([sys.executable, "/mnt/data/refraction_cloak_ray_demo.py"], check=True)
 subprocess.run([sys.executable, "/mnt/data/hologram_camouflage_demo.py"], check=True)
@@ -240,7 +232,7 @@ def plot_scene(n, rays, cloak_center=(300,150), cloak_radius=60,
             ax.plot(r[:,0], r[:,1])
         return fig, ax
 
-#Animation version
+#Animation
     lines = [ax.plot([], [], lw=1.5)[0] for _ in rays]
 
     def init():
